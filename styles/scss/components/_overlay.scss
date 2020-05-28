@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// Photo overlay component styles
+// -----------------------------------------------------------------------------
+
+.overlay {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+
+}
+
+
+.overlay--active {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.overlay__inner {
+  background: $white;
+  // width: 100%;
+  // height: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 20px;
+
+  position: relative;
+}
+
+
+.overlay__img {
+  width: 100%;
+  height: 100%;
+  max-height: calc(90vh - 80px);
+}
+
+
+.overlay__close {
+  background: center / 15px 15px no-repeat url("../../../images/close.svg");
+  background-color: $white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+  transition: $transition;
+
+  @include on-event {
+    background-color: $lighter-grey;
+  }
+}
+
+
+// .overlay__picture {
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+// }

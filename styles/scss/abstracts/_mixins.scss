@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// Event wrapper
+@mixin on-event {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+
+// Display flex default
+@mixin flex($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

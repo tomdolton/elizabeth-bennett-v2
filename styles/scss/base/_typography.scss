@@ -1,0 +1,22 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $mid-grey;
+  font-family: $ff-body;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+h1 {
+  font-family: $ff-primary;
+  font-weight: 300;
+  line-height: 0.9;
+}
+
+
+a {
+  color: $mid-grey;
+}

@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// Application-wide Sass/CSS variables.
+// -----------------------------------------------------------------------------
+
+// Fonts
+$ff-body: 'Josefin Sans', sans-serif;
+$ff-primary: 'Josefin Slab', serif;
+
+/*
+image sizes
+220kb - 825px x 550px
+        700px x 1050px
+
+
+400 to 700kb - 1920 x 1080px
+
+
+60 to 170 to 256kb - 768 x 1024px
+*/
+
+
+// Copy text color
+$dark-grey: #333333;
+$mid-grey: #666666;
+$light-grey: #aaaaaa;
+$lighter-grey: #bbbbbb;
+$white: #ffffff;
+
+
+
+// Container's maximum width
+$max-width: 1180px;
+
+
+
+// Breakpoints
+  $bp-small: 320px;
+  $bp-medium: 768px;
+  $bp-large: 1024px;
+
+
+
+  // Transitions
+  $transition: ease-in-out 250ms;

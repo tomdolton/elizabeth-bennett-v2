@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Button component
+// -----------------------------------------------------------------------------
+
+.hamburger {
+
+  border: none;
+  background: none;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: $bp-large) {
+    display: none;
+  }
+}
+
+
+.hamburger__line {
+  width: 40px;
+  height: 2px;
+  display: block;
+  background-color: $mid-grey;
+  margin: 9px 0;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+
+.hamburger--active {
+
+  .hamburger__line:nth-child(1) {
+    transform: translateY(12px)
+               rotate(45deg);
+  }
+
+  .hamburger__line:nth-child(2) {
+    transform: rotate(135deg);
+  }
+
+  .hamburger__line:nth-child(3) {
+    transform: translateY(-10px)
+               rotate(45deg);
+    opacity: 0;
+  }
+}
+
+

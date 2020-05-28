@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// Button component
+// -----------------------------------------------------------------------------
+
+// Read about this:
+// @link https://moderncss.dev/css-button-styling-guide/
+
+$btnColor: #3e68ff;
+
+
+// Reset default link styles
+a.btn {
+  text-decoration: none;
+}
+
+
+// Reset default button styles
+button.btn {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+a.btn,
+button.btn {
+  // Display
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start; // Optional - see "Gotchas"
+  
+  // Visual
+  background-color: $btnColor;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  
+  // Size
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+  
+  // Text
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-align: center;
+
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: scale-color($btnColor, $lightness: -20%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
+  }
+
+  &--small {
+    font-size: 1.15rem;
+  }
+
+  &--block {
+    width: 100%;
+  }
+}

@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// Header styles & layout
+// -----------------------------------------------------------------------------
+
+//
+// Mobile view header
+// ==========================================================================
+
+
+.header {
+  @include flex;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+
+.header__title {
+  font-size: 1.2rem;
+  max-width: 150px;
+}
+.header__title--small {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.nav {
+  display: none;
+}
+
+
+//
+// Mobile Nav
+// ==========================================================================
+.mobile-nav {
+  // border-top: 2px $light-grey solid;
+  // border-bottom: 2px $light-grey solid;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  visibility: hidden;
+  background-color: $white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px;
+  // z-index: 3;
+  transform: translateX(500px);
+  // transform: translateY(-70%);
+  opacity: 0;
+  transition: none;
+
+  // transition: 1s all;
+
+  & li {
+    margin-bottom: 1rem;
+  }
+
+  // Line decorations
+  & li:first-child::before,
+  & li:last-child::after {
+    background: $light-grey;
+    display: block;
+    content: "";
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 95px;
+    height: 2px;
+  }
+
+  // Top line decoration
+  & li:first-child::before {
+    top: -1rem;
+  }
+
+  // Bottom line decoration
+  & li:last-child::after {
+    top: 1rem;
+  }
+
+}
+
+.mobile-nav--active {
+  visibility: visible;
+  opacity: 1;
+  transition: all $transition;
+  transform: translateX(0);
+
+}
+
+
+
+
+
+
+//
+// Large screen sidebar header
+// ==========================================================================
+@media (min-width: $bp-large) {
+
+  // .header-push {
+  //   height: 100vh;
+  //   width: 250px;
+  //   content: "";
+  // }
+
+  .header {
+    position: fixed;
+    top: 0;
+    // bottom: 0;
+    height: 100vh;
+    background: $white;
+    max-width: 180px;
+    border-right: solid 1px $light-grey;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .nav li:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .nav--galleries {
+    margin-top: auto;
+    margin-bottom: 2rem;
+  }
+
+
+  .header__logo {
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+
+
+}
