@@ -24,6 +24,16 @@
   padding-left: 10px; /* 3 */
   padding-right: 10px; /* 3 */
   width: 100%; /* 1 */
+
+  @media (min-width: $bp-medium) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: $bp-large) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
  }
 
 /**

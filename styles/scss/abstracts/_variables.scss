@@ -20,16 +20,17 @@ image sizes
 
 
 // Copy text color
-$dark-grey: #333333;
-$mid-grey: #666666;
-$light-grey: #aaaaaa;
-$lighter-grey: #bbbbbb;
+$rich-black: #051720;
+$dark-grey: #3A4141;
+$mid-grey: #5B5D5D;
+$light-grey: #A1A1A1;
+$silver: #CCCCCC;
 $white: #ffffff;
 
 
 
 // Container's maximum width
-$max-width: 1180px;
+$max-width: 1600px;
 
 
 
@@ -37,6 +38,7 @@ $max-width: 1180px;
   $bp-small: 320px;
   $bp-medium: 768px;
   $bp-large: 1024px;
+  $bp-xlarge: 1360px;
 
 
 

@@ -11,15 +11,26 @@ const Nav = {
   cacheDOM: function () {
     this.hamburger = document.querySelector(".hamburger");
     this.mobileNav = document.querySelector(".mobile-nav");
+    this.modal = document.querySelector(".modal");
   },
 
   bindEvents: function () {
     this.hamburger.addEventListener("click", this.toggleNav.bind(this));
+    this.modal.addEventListener("click", this.toggleNav.bind(this));
+    window.addEventListener("scroll", this.closeNav.bind(this));
+    window.addEventListener("resize", this.closeNav.bind(this));
   },
 
   toggleNav: function () {
     this.mobileNav.classList.toggle("mobile-nav--active");
     this.hamburger.classList.toggle("hamburger--active");
+    this.modal.classList.toggle("modal--active");
+  },
+
+  closeNav: function () {
+    this.mobileNav.classList.remove("mobile-nav--active");
+    this.hamburger.classList.remove("hamburger--active");
+    this.modal.classList.remove("modal--active");
   }
 
 };
@@ -38,6 +49,7 @@ const Gallery = {
     this.cacheDOM();
     this.generateGallery();
     this.bindEvents();
+    console.log("init")
   },
 
   cacheDOM: function () {
@@ -57,9 +69,9 @@ const Gallery = {
 
   generateHTML: function ([name, number]) {
     return `
-      <picture class="gallery__item">
+      <picture>
         <source type="image/jpeg" srcset="images/${name}_${number}.jpg">
-        <img src="images/${name}_${number}.jpg" alt="">
+        <img class="gallery__item" src="images/${name}_${number}.jpg" alt="">
       </picture>
     `;
   },
@@ -75,11 +87,10 @@ const Gallery = {
   },
 
   setOrientation: function (photo) {
-    const img = photo.querySelector("img");
-    const height = img.clientHeight;
-    const width = img.naturalWidth;
+    const height = photo.naturalHeight;
+    const width = photo.naturalWidth;
     if (height > width) {
-      photo.classList.add("span-2")
+      photo.parentNode.classList.add("span-2")
     }
   },
 
@@ -139,7 +150,7 @@ const UnfixHeader = {
   followTo: function (position) {
     let top = window.scrollY;
 
-    if (this.windowWidth < 768) {
+    if (this.windowWidth < 1024) {
       this.header.style.position = "static";
     } else if (top >= position) {
       this.header.style.position = "absolute";

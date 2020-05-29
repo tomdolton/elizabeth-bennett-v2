@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// Mobile nav component
+// -----------------------------------------------------------------------------
+
+.mobile-nav {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  visibility: hidden;
+  background-color: $white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px;
+  z-index: 2;
+  // transform: translateX(-500px);
+  // transform: translateY(-70%);
+  opacity: 0;
+  transition: none;
+  transition: opacity $transition;
+  // transition: 1s all;
+
+  & li {
+    margin-bottom: 1rem;
+  }
+
+  // Line decorations
+  & li:first-child::before,
+  & li:last-child::after {
+    background: $light-grey;
+    display: block;
+    content: "";
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 95px;
+    height: 2px;
+  }
+
+  // Top line decoration
+  & li:first-child::before {
+    top: -1.5rem;
+  }
+
+  // Bottom line decoration
+  & li:last-child::after {
+    top: 1.5rem;
+  }
+
+}
+
+.mobile-nav--active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity $transition;
+  transform: translateX(0);
+
+}
+
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -99;
+  opacity: 0;
+  transition: opacity $transition;
+}
+
+.modal--active {
+  z-index: 1;
+  opacity: 1;
+}
+
+
+@media (min-width: $bp-large) {
+
+  .mobile-nav,
+  .modal {
+    display: none;
+  }
+}

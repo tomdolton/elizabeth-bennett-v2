@@ -58,7 +58,7 @@
   transition: $transition;
 
   @include on-event {
-    background-color: $lighter-grey;
+    background-color: $silver;
   }
 }
 

@@ -2,10 +2,54 @@
 // Footer styles & layout
 // -----------------------------------------------------------------------------
 
+.footer {
+  @include flex(column);
+  background: $rich-black;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+
+.footer__logo {
+  margin-bottom: 2rem;
+}
+
+
+.footer__nav {
+  margin-bottom: 2rem;
+
+    li {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    a {
+      color: $silver;
+      font-weight: 400;
+
+      @include on-event {
+        color: $white;
+      }
+    }
+  }
+
+
+.footer__copyright {
+  color: $light-grey;
+  font-size: 11px;
+}
+
 
 @media (min-width: $bp-large) {
-  .footer {
-    padding-top: 100px;
+  .footer .container {
+    @include flex;
+  }
 
+  .footer__logo {
+    margin: 0;
+  }
+
+  .footer__nav {
+    margin: 0 auto 0 4rem;
   }
 }
