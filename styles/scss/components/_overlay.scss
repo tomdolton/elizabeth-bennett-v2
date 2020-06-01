@@ -5,14 +5,12 @@
 .overlay {
   display: none;
   position: fixed;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
-
-
 }
 
 
@@ -20,36 +18,51 @@
   display: grid;
   justify-content: center;
   align-items: center;
-
 }
 
 
 .overlay__inner {
   background: $white;
-  // width: 100%;
+  width: calc(95vh * 1.3);
   // height: 100%;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 1040px;  //max-width of images + padding
+  max-height: 95vh;
   padding: 20px;
 
   position: relative;
 }
 
+// .overlay__track {
+//   background: $white;
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+
+// }
+
 
 .overlay__img {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-  max-height: calc(90vh - 80px);
+  max-height: calc(95vh - 80px);
+  margin: 0 auto;
+  display: none;
+}
+
+.overlay__img--active {
+  display: block;
 }
 
 
 .overlay__close {
   background: center / 15px 15px no-repeat url("../../../images/close.svg");
   background-color: $white;
-  border: none;
   border-radius: 50%;
   padding: 15px;
-  cursor: pointer;
 
   position: absolute;
   right: 5px;
@@ -66,5 +79,32 @@
 // .overlay__picture {
 //   width: 100%;
 //   height: 100%;
-//   overflow: hidden;
 // }
+
+
+.overlay__next,
+.overlay__prev {
+  position: absolute;
+  top: 50%;
+  padding: 28px 18px;
+  background-position: center;
+  background-size: 40px;;
+  background-repeat: no-repeat;
+  // background-color: rgba(255, 255, 255, 0.5);
+  background-color: $white;
+  opacity: 0.5;
+
+  @include on-event {
+    opacity: 0.9;
+  }
+}
+
+.overlay__next {
+  right: 15px;
+  background-image: url("../../../images/next-arrow.svg");
+}
+
+.overlay__prev {
+  left: 15px;
+  background-image: url("../../../images/previous-arrow.svg");
+}

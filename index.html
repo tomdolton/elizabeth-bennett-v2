@@ -33,11 +33,8 @@
   <div class="overlay">
     <div class="overlay__inner">
       <button class="overlay__close"></button>
-      <picture class="overlay__picture">
-        <source type="image/webp">
-        <source type="image/jpeg">
-        <img class="overlay__img">
-      </picture>
+      <button class="overlay__prev"></button>
+      <button class="overlay__next"></button>
     </div>
   </div>
   <!-- overlay end -->
@@ -45,12 +42,15 @@
   <div class="wrapper container">
 
     <header class="header">
-      <a href="./">
-        <img src="images/eb-logo.jpg" alt="" class="logo header__logo">
+      <a class="header__logo" href="./">
+        <img src="images/eb-logo.jpg" alt="" class="logo">
       </a>
-      <h1 class="header__title">Elizabeth Bennett <span class="header__title--small">Photography</span></h1>
+      <a href="./">
+        <h1 class="header__title">Elizabeth Bennett <span class="header__title--small">Photography</span></h1>
+      </a>
       <nav class="nav header__nav nav--galleries">
         <ul>
+          <li><a href="new-zealand.html">New Zealand</a></li>
           <li><a href="cornish-coast.html">Cornish Coast</a></li>
           <li><a href="norfolk-coast.html">Norfolk Coast</a></li>
           <li><a href="india.html">India</a></li>
@@ -73,6 +73,7 @@
       </button>
       <nav class="mobile-nav">
         <ul>
+          <li><a href="new-zealand.html">New Zealand</a></li>
           <li><a href="cornish-coast.html">Cornish Coast</a></li>
           <li><a href="norfolk-coast.html">Norfolk Coast</a></li>
           <li><a href="india.html">India</a></li>
