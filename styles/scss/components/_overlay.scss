@@ -2,6 +2,8 @@
 // Photo overlay component styles
 // -----------------------------------------------------------------------------
 
+
+
 .overlay {
   display: none;
   position: fixed;
@@ -22,81 +24,64 @@
 
 
 .overlay__inner {
-  background: $white;
-  width: calc(95vh * 1.3);
-  // height: 100%;
-  max-width: 1040px;  //max-width of images + padding
-  max-height: 95vh;
-  padding: 20px;
-
+  background: rgba(255, 255, 255, 0.7);
   position: relative;
 }
 
-// .overlay__track {
-//   background: $white;
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-
-// }
-
 
 .overlay__img {
-  max-width: 100%;
-  height: 100%;
-  max-height: calc(95vh - 80px);
+  background-color: $white;
+  max-width: calc(95vw - 70px);
+  height: auto;
+  max-height: calc(95vh - 20px);
   margin: 0 auto;
-  display: none;
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  opacity: 0;
 }
 
+
 .overlay__img--active {
-  display: block;
+  opacity: 1;
+  transition: opacity 250ms ease-out;
 }
 
 
 .overlay__close {
-  background: center / 15px 15px no-repeat url("../../../images/close.svg");
-  background-color: $white;
+  background: center / 15px no-repeat url("../../../images/close.svg");
   border-radius: 50%;
   padding: 15px;
+  right: 15px;
+  top: 15px;
+}
 
+.overlay__next,
+.overlay__prev,
+.overlay__close {
+  background-color: $white;
   position: absolute;
-  right: 5px;
-  top: 5px;
-
-  transition: $transition;
+  opacity: 0.65;
+  transition: $transition opacity;
 
   @include on-event {
-    background-color: $silver;
+    opacity: 1;
   }
 }
 
-
-// .overlay__picture {
-//   width: 100%;
-//   height: 100%;
-// }
-
-
 .overlay__next,
 .overlay__prev {
-  position: absolute;
   top: 50%;
-  padding: 28px 18px;
+  padding: 30px 18px;
   background-position: center;
-  background-size: 40px;;
+  background-size: 32px;
   background-repeat: no-repeat;
-  // background-color: rgba(255, 255, 255, 0.5);
-  background-color: $white;
-  opacity: 0.5;
-
-  @include on-event {
-    opacity: 0.9;
-  }
+  border-radius: 2px;
 }
 
 .overlay__next {
@@ -107,4 +92,18 @@
 .overlay__prev {
   left: 15px;
   background-image: url("../../../images/previous-arrow.svg");
+}
+
+
+// @media (max-width: $bp-medium) {
+//   .overlay--active {
+//     display: none;
+//   }
+// }
+
+
+@media (min-width: $bp-xlarge) {
+//  .overlay__close { right: 5%; }
+  .overlay__next { right: 5%; }
+  .overlay__prev { left: 5%; }
 }
